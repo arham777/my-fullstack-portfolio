@@ -7,10 +7,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+    --border: 215 25% 27%;
+    --input: 217 19% 27%;
     --ring: 224 71.4% 4.1%;
   }
 
@@ -19,12 +19,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-primary text-white;
+    background: linear-gradient(to bottom right, #1A1F2C, #222831);
   }
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent/70;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-purple-400;
 }
 
 .link-underline {
@@ -32,13 +33,17 @@
 }
 
 .project-card {
-  @apply relative overflow-hidden rounded-lg bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  @apply relative overflow-hidden rounded-lg bg-secondary/50 backdrop-blur-sm p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-white/10;
 }
 
 .skill-icon {
-  @apply flex h-20 w-20 items-center justify-center rounded-xl bg-muted p-4 transition-all duration-300 hover:bg-accent hover:text-white;
+  @apply flex h-20 w-20 items-center justify-center rounded-xl bg-secondary/50 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-accent hover:text-white border border-white/10;
 }
 
 .contact-input {
-  @apply w-full rounded-lg border border-border bg-white px-4 py-3 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  @apply w-full rounded-lg border border-white/10 bg-secondary/50 backdrop-blur-sm px-4 py-3 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-white;
+}
+
+.nav-glass {
+  @apply bg-secondary/10 backdrop-blur-md border-b border-white/10;
 }

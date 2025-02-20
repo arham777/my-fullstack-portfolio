@@ -29,10 +29,10 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: "#1a1a1a",
-        secondary: "#f5f5f5",
-        accent: "#6366f1",
-        muted: "#f3f4f6",
+        primary: "#1A1F2C",
+        secondary: "#222831",
+        accent: "#8B5CF6",
+        muted: "#2D3748",
       },
       keyframes: {
         "fade-in": {

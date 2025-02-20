@@ -16,18 +16,17 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind"],
     link: "#"
   },
-  // Add more projects as needed
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-secondary">
+    <section id="projects" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-display font-bold text-center mb-12"
+          className="text-3xl md:text-4xl font-display font-bold text-center mb-12 text-gradient"
         >
           Featured Projects
         </motion.h2>
@@ -46,13 +45,13 @@ const Projects = () => {
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+              <p className="text-white/70 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm"
+                    className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm"
                   >
                     {tech}
                   </span>
