@@ -1,9 +1,10 @@
 
 import { motion } from "framer-motion";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-secondary">
+    <section id="contact" className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -14,53 +15,40 @@ const Contact = () => {
           Get in Touch
         </motion.h2>
         <div className="max-w-2xl mx-auto">
-          <motion.form
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-8 text-center"
           >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="contact-input"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="contact-input"
-                placeholder="Your email"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                className="contact-input"
-                placeholder="Your message"
-              />
-            </div>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-accent text-white py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center justify-center space-x-3"
             >
-              Send Message
-            </motion.button>
-          </motion.form>
+              <MapPin className="w-6 h-6 text-accent" />
+              <span className="text-lg">Green Town Lahore</span>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center justify-center space-x-3"
+            >
+              <Phone className="w-6 h-6 text-accent" />
+              <a href="tel:+923032224501" className="text-lg hover:text-accent transition-colors">
+                +92 303 2224501
+              </a>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center justify-center space-x-3"
+            >
+              <Mail className="w-6 h-6 text-accent" />
+              <a href="mailto:arhamawan200@gmail.com" className="text-lg hover:text-accent transition-colors">
+                arhamawan200@gmail.com
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
