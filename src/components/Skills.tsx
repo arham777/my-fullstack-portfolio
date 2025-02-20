@@ -25,7 +25,7 @@ const Skills = () => {
           once: true
         }} transition={{
           delay: index * 0.1
-        }} className="skill-icon px-[5px]">
+        }} className="skill-icon px-px py-[6px]">
               {skill}
             </motion.div>)}
         </div>
