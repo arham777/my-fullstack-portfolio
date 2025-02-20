@@ -2,16 +2,16 @@
 import { motion } from "framer-motion";
 import { 
   Atom, 
-  Python, 
-  Tailwind, 
+  Code2, 
+  Paintbrush, 
   GitBranch, 
-  AwsIcon, 
-  Docker, 
-  TypeScript, 
+  Cloud, 
+  Container, 
+  FileCode, 
   Database,
-  Flutter,
-  User,
-  Django
+  Smartphone,
+  Layout,
+  Terminal
 } from "lucide-react";
 
 interface Skill {
@@ -22,16 +22,16 @@ interface Skill {
 
 const skills: Skill[] = [
   { name: "React", icon: <Atom className="w-8 h-8 text-[#61DAFB]" />, delay: 0 },
-  { name: "Django", icon: <Django className="w-8 h-8 text-[#092E20]" />, delay: 0.1 },
-  { name: "Tailwind CSS", icon: <Tailwind className="w-8 h-8 text-[#38BDF8]" />, delay: 0.2 },
+  { name: "Django", icon: <Code2 className="w-8 h-8 text-[#092E20]" />, delay: 0.1 },
+  { name: "Tailwind CSS", icon: <Paintbrush className="w-8 h-8 text-[#38BDF8]" />, delay: 0.2 },
   { name: "Git", icon: <GitBranch className="w-8 h-8 text-[#F05032]" />, delay: 0.3 },
-  { name: "AWS", icon: <AwsIcon className="w-8 h-8 text-[#FF9900]" />, delay: 0.4 },
-  { name: "Docker", icon: <Docker className="w-8 h-8 text-[#2496ED]" />, delay: 0.5 },
-  { name: "TypeScript", icon: <TypeScript className="w-8 h-8 text-[#3178C6]" />, delay: 0.6 },
+  { name: "AWS", icon: <Cloud className="w-8 h-8 text-[#FF9900]" />, delay: 0.4 },
+  { name: "Docker", icon: <Container className="w-8 h-8 text-[#2496ED]" />, delay: 0.5 },
+  { name: "TypeScript", icon: <FileCode className="w-8 h-8 text-[#3178C6]" />, delay: 0.6 },
   { name: "SQL", icon: <Database className="w-8 h-8 text-[#336791]" />, delay: 0.7 },
-  { name: "Flutter", icon: <Flutter className="w-8 h-8 text-[#02569B]" />, delay: 0.8 },
-  { name: "UI/UX", icon: <User className="w-8 h-8 text-[#FF4088]" />, delay: 0.9 },
-  { name: "Python", icon: <Python className="w-8 h-8 text-[#3776AB]" />, delay: 1.0 },
+  { name: "Flutter", icon: <Smartphone className="w-8 h-8 text-[#02569B]" />, delay: 0.8 },
+  { name: "UI/UX", icon: <Layout className="w-8 h-8 text-[#FF4088]" />, delay: 0.9 },
+  { name: "Python", icon: <Terminal className="w-8 h-8 text-[#3776AB]" />, delay: 1.0 },
 ];
 
 const floatingAnimation = {
