@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
 @tailwind base;
@@ -7,11 +6,19 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --border: 215 25% 27%;
-    --input: 217 19% 27%;
-    --ring: 224 71.4% 4.1%;
+    --background: 217 33% 8%;  /* #0A101F */
+    --foreground: 0 0% 100%;   /* white */
+    --card: 222 47% 11%;       /* slate-800 */
+    --card-foreground: 195 80% 86%; /* sky-200 */
+    --border: 199 89% 32%;     /* sky-700 */
+    --input: 217 33% 17%;      /* #131A30 */
+    --primary: 199 89% 48%;    /* sky-500 */
+    --primary-foreground: 0 0% 100%;  /* white */
+    --secondary: 217 91% 60%;  /* blue-500 */
+    --secondary-foreground: 0 0% 100%;  /* white */
+    --accent: 199 89% 48%;     /* sky-500 */
+    --accent-foreground: 0 0% 100%;  /* white */
+    --ring: 199 89% 48%;       /* sky-500 */
   }
 
   * {
@@ -19,31 +26,119 @@
   }
 
   body {
-    @apply bg-primary text-white;
-    background: linear-gradient(to bottom right, #1A1F2C, #222831);
+    @apply text-white;
+    background: #0A101F;
+    background-image: 
+      radial-gradient(at 10% 90%, rgba(2, 132, 199, 0.1), transparent 40%),
+      radial-gradient(at 90% 10%, rgba(37, 99, 235, 0.1), transparent 40%);
   }
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-purple-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500;
 }
 
 .link-underline {
-  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:after:scale-x-100;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-sky-500 after:transition-transform hover:after:scale-x-100;
 }
 
 .project-card {
-  @apply relative overflow-hidden rounded-lg bg-secondary/50 backdrop-blur-sm p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-white/10;
+  @apply relative overflow-hidden rounded-lg bg-slate-800/50 backdrop-blur-sm p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-sky-700/30;
 }
 
 .skill-icon {
-  @apply flex h-20 w-20 items-center justify-center rounded-xl bg-secondary/50 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-accent hover:text-white border border-white/10;
+  @apply flex h-20 w-20 items-center justify-center rounded-xl bg-slate-800/50 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-sky-500/90 hover:text-white border border-sky-700/30;
 }
 
 .contact-input {
-  @apply w-full rounded-lg border border-white/10 bg-secondary/50 backdrop-blur-sm px-4 py-3 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-white;
+  @apply w-full rounded-lg border border-sky-700/30 bg-slate-800/50 backdrop-blur-sm px-4 py-3 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-white;
 }
 
 .nav-glass {
-  @apply bg-secondary/10 backdrop-blur-md border-b border-white/10;
+  @apply bg-[#0A101F]/85 backdrop-blur-lg border-b border-sky-700/30;
+}
+
+/* 3D Navbar styles */
+.nav-tab-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.nav-tab-active {
+  transform: translateZ(5px);
+  box-shadow: 
+    0 10px 20px -5px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Professional card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -10px rgba(2, 132, 199, 0.15);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-sky-500/90 to-blue-600/90 text-white font-medium py-2.5 px-5 rounded-lg transition-all duration-200
+    hover:shadow-lg hover:shadow-sky-500/20 hover:from-sky-500 hover:to-blue-600
+    focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-[#0A101F];
+}
+
+.btn-secondary {
+  @apply bg-slate-700/60 text-white font-medium py-2.5 px-5 rounded-lg transition-all duration-200
+    hover:bg-slate-600/70 active:bg-slate-500/70
+    focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-[#0A101F];
+}
+
+.btn-outline {
+  @apply border border-sky-700/50 text-sky-100 font-medium py-2.5 px-5 rounded-lg transition-all duration-200
+    hover:bg-sky-500/10 hover:border-sky-500/50
+    focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-[#0A101F];
+}
+
+/* Section dividers */
+.section-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, rgba(14, 165, 233, 0.3), transparent);
+}
+
+/* Professional heading styles */
+.heading-xl {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  background: linear-gradient(to right, #FFFFFF, #BAE6FD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold;
+  background: linear-gradient(to right, #FFFFFF, #BAE6FD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading-md {
+  @apply text-2xl md:text-3xl font-bold text-white;
 }

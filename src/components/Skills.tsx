@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { 
   Atom, 
@@ -13,6 +12,9 @@ import {
   Layout,
   Terminal
 } from "lucide-react";
+import SectionTransition from "./SectionTransition";
+import AnimateOnScroll from "./AnimateOnScroll";
+import { useAnimationContext } from "../App";
 
 interface Skill {
   name: string;
@@ -47,25 +49,23 @@ const floatingAnimation = {
 };
 
 const Skills = () => {
+  // Get animation context
+  const { activeSection, triggerAnimation } = useAnimationContext();
+  const isActive = activeSection === "skills";
+
   return (
-    <section id="skills" className="py-20 bg-primary/50">
+    <SectionTransition id="skills" className="py-20 bg-primary/800">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-display font-bold text-center mb-16 text-gradient"
-        >
+        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16 text-gradient">
           Technologies
-        </motion.h2>
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-          {skills.map((skill) => (
-            <motion.div
+          {skills.map((skill, index) => (
+            <AnimateOnScroll
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: skill.delay }}
+              delay={skill.delay + 0.1}
+              direction={index % 2 === 0 ? "up" : "down"}
+              distance={30}
               className="flex flex-col items-center"
             >
               <motion.div
@@ -73,17 +73,26 @@ const Skills = () => {
                 animate="animate"
                 variants={floatingAnimation}
                 className="flex items-center justify-center w-20 h-20 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 shadow-lg hover:border-accent/50 transition-all duration-300"
+                whileHover={{ 
+                  scale: 1.1, 
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  rotate: [0, -5, 5, -5, 0],
+                }}
+                transition={{
+                  scale: { type: "spring", stiffness: 400, damping: 10 },
+                  rotate: { duration: 0.5 }
+                }}
               >
                 {skill.icon}
               </motion.div>
               <span className="mt-3 text-sm font-medium text-white/80">
                 {skill.name}
               </span>
-            </motion.div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
-    </section>
+    </SectionTransition>
   );
 };
 
