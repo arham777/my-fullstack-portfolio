@@ -26,6 +26,14 @@ const projectsData = [
     tech: ["React", "Tailwind","Iframe"],
     link: "https://iframe-embed-theta.vercel.app/"
   },
+  {
+    id: 4,
+    title: "AI Chatbot",
+    description: "Conversational AI chatbot built with React and Tailwind, leveraging the Gemini API for intelligent, real-time responses and a modern, user-friendly interface.",
+    image: `https://api.microlink.io/?url=https://ai-chatbot-lac-iota.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&overlay.browser=dark&force=true&scale=1&height=400`,
+    tech: ["React", "Tailwind","Gemini API"],
+    link: "https://ai-chatbot-lac-iota.vercel.app/"
+  },
   // Add more projects if needed
 ];
 
