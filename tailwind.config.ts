@@ -19,8 +19,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Poppins", "sans-serif"],
+        sans: ["Inter var", "system-ui", "sans-serif"],
+        display: ["Manrope", "Inter var", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -31,49 +44,59 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          50: '#EEF6FF',
-          100: '#D9EDFF',
-          200: '#C0E0FF',
-          300: '#8CCBFF',
-          400: '#38BDF8', // sky-400
-          500: '#0EA5E9', // sky-500
-          600: '#0284C7', // sky-600
-          700: '#0369A1', // sky-700
-          800: '#075985', // sky-800
-          900: '#0C4A6E', // sky-900
+          50: '#EBF4FF',
+          100: '#D6E9FF',
+          200: '#ADD2FF',
+          300: '#84BAFF',
+          400: '#5A9EFF',
+          500: '#2E83FF', // New primary blue
+          600: '#0064E5', // New primary-600
+          700: '#0053BD',
+          800: '#003F8F',
+          900: '#003166',
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B82F6', // blue-500
-          600: '#2563EB', // blue-600
-          700: '#1D4ED8', // blue-700
-          800: '#1E40AF', // blue-800
-          900: '#1E3A8A', // blue-900
+          50: '#F0F5FC',
+          100: '#E5EDFA',
+          200: '#CFDCF5',
+          300: '#ABC6EC',
+          400: '#8AADDF',
+          500: '#6A93D2', 
+          600: '#4C75BD', 
+          700: '#3859A0', 
+          800: '#26407B', 
+          900: '#1A2F5E', 
+        },
+        // Yellow accent colors - use sparingly
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+          300: '#FFDC73',
+          400: '#FFD147',
+          500: '#FFC300', // Main accent
+          600: '#E6B000',
+          700: '#CC9C00',
         },
         card: "hsl(var(--card))",
         "card-foreground": "hsl(var(--card-foreground))",
-        accent: "hsl(var(--accent))",
         "accent-foreground": "hsl(var(--accent-foreground))",
-        slate: {
-          750: '#1E293B', // Custom shade between slate-700 and slate-800
-        },
-        // Dark background shades
+        // Dark background shades - deep blue palette
         dark: {
-          DEFAULT: '#0A101F', // Main dark background
-          lighter: '#131A30', // Slightly lighter shade for cards
-          lightest: '#1E293B', // Lightest dark shade (like slate-800)
+          DEFAULT: '#000814', // Base background - darkest blue-black
+          surface: '#001123', // Card surface - slightly lighter
+          light: '#001d3d', // Lighter surface - for hover states
+          lighter: '#002855', // Lightest surface - for active states
+          border: '#003566', // Border color - medium blue
+          muted: '#00111f', // Muted backgrounds 
         },
       },
       boxShadow: {
-        'glow-sm': '0 0 10px rgba(56, 189, 248, 0.2)',
-        'glow-md': '0 0 15px rgba(56, 189, 248, 0.3)',
-        'glow-lg': '0 0 20px rgba(56, 189, 248, 0.4)',
+        'subtle': '0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)',
+        'medium': '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
+        'accent': '0 4px 14px 0 rgba(0, 100, 229, 0.3)',
+        'yellow': '0 4px 14px 0 rgba(255, 195, 0, 0.3)',
       },
       keyframes: {
         "fade-in": {
@@ -84,21 +107,21 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
         },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 15px rgba(56, 189, 248, 0.2)" },
-          "50%": { boxShadow: "0 0 20px rgba(56, 189, 248, 0.4)" },
-        },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.5s ease-out",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
       },
       backgroundImage: {
-        'gradient-radial-sky': 'radial-gradient(at 10% 90%, rgba(2, 132, 199, 0.1), transparent 40%)',
-        'gradient-radial-blue': 'radial-gradient(at 90% 10%, rgba(37, 99, 235, 0.1), transparent 40%)',
-        'gradient-primary': 'linear-gradient(to right, rgba(14, 165, 233, 0.9), rgba(37, 99, 235, 0.9))',
-        'gradient-logo': 'linear-gradient(to bottom right, #FFFFFF, #7DD3FC)',
+        'gradient-subtle': 'linear-gradient(to right bottom, rgba(0, 100, 229, 0.05), rgba(0, 8, 20, 0))',
+        'gradient-accent': 'linear-gradient(135deg, #003566, #001d3d)',
+        'gradient-yellow': 'linear-gradient(135deg, #FFC300, #E6B000)',
+        'gradient-text': 'linear-gradient(to right, #caf0f8, #90e0ef)',
+        'gradient-dark': 'linear-gradient(to bottom, #000814, #001529, #000814)',
+        'gradient-dark-radial': 'radial-gradient(circle at center, #001d3d, #000814, #000814)',
+        'gradient-dark-diagonal': 'linear-gradient(135deg, #000814, #001d3d, #000814)',
+        'gradient-dark-blue': 'linear-gradient(to bottom, #000814, #001d3d, #000814)',
+        'noise-pattern': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
       },
     },
   },
