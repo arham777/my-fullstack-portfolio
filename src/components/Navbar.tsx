@@ -85,7 +85,8 @@ const Navbar = ({ onSectionChange }: NavbarProps) => {
     };
   }, [activeSection, onSectionChange]);
 
-  const handleNavClick = (sectionId: string) => {
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    event.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
@@ -126,7 +127,7 @@ const Navbar = ({ onSectionChange }: NavbarProps) => {
           <a
             href="#home"
             className="text-lg sm:text-xl font-medium text-accent-400"
-            onClick={() => handleNavClick("home")}
+            onClick={(e) => handleNavClick(e, "home")}
           >
             Arham.
           </a>
@@ -139,7 +140,7 @@ const Navbar = ({ onSectionChange }: NavbarProps) => {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    onClick={() => handleNavClick(item.id)}
+                    onClick={(e) => handleNavClick(e, item.id)}
                     className={`block text-xs px-3.5 py-1.5 rounded-full transition-colors duration-200 outline-none
                       focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-1
                       ${isActive 
@@ -203,7 +204,7 @@ const Navbar = ({ onSectionChange }: NavbarProps) => {
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      onClick={() => handleNavClick(item.id)}
+                      onClick={(e) => handleNavClick(e, item.id)}
                       className={`block w-full px-3.5 py-1.5 rounded-lg text-xs transition-colors duration-200 outline-none
                       focus-visible:ring-2 focus-visible:ring-primary-600
                       ${isActive 
