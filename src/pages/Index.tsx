@@ -18,7 +18,7 @@ const Index = ({ onSectionChange }: IndexProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-b from-[#0B1120] to-[#080F1F] min-h-screen"
+      className="min-h-screen"
     >
       <Navbar onSectionChange={onSectionChange} />
       <div className="page-content">

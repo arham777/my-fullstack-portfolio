@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useIsMobile } from "../hooks/use-mobile";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Github, Linkedin } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Hero: React.FC = () => {
   const isMobile = useIsMobile();
@@ -74,11 +75,8 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-14 pb-16">
-      {/* Background gradient effects */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-gradient-dark-radial opacity-60 blur-3xl -z-10" />
-        <div className="absolute bottom-0 right-1/3 w-2/3 h-1/2 bg-gradient-dark-radial opacity-60 blur-3xl -z-10" />
-      </div>
+      {/* Subtle linear gradient for a smoother background */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary/10 via-secondary/20 to-background" />
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="flex flex-col items-center justify-center text-center space-y-6">
@@ -100,8 +98,8 @@ const Hero: React.FC = () => {
             animate="visible"
             className="max-w-lg mx-auto text-body-sm sm:text-body"
           >
-            I build modern web applications with <span className="highlight-yellow">React</span>, 
-            <span className="text-primary-400"> Next.js</span>, and <span className="highlight-yellow">Python</span>.
+            I build modern web applications with <span className="highlight">React</span>,
+            <span className="text-foreground"> Next.js</span>, and <span className="highlight">Python</span>.
             Specializing in creating responsive user interfaces and robust backend systems.
           </motion.p>
 
@@ -109,23 +107,27 @@ const Hero: React.FC = () => {
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
-            whileHover="hover"
-            whileTap="tap"
-            className="flex space-x-3"
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
-            <button
+            <Button
               onClick={scrollToProjects}
-              className="btn-primary shadow-glow-sm hover:shadow-glow-md"
+              size="lg"
+              className="w-full sm:w-auto"
             >
-              View Projects
-            </button>
-
-            <a
-              href="#contact"
-              className="btn-outline"
-            >
-              Contact Me
-            </a>
+              View My Work
+            </Button>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/arham777" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="icon">
+                  <Github className="w-5 h-5" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-arham-athar-4bba202b7/" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="icon">
+                  <Linkedin className="w-5 h-5" />
+                </Button>
+              </a>
+            </div>
           </motion.div>
           
           {/* Arrow icon moved below the buttons in the flex layout */}
@@ -142,7 +144,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Subtle decorative elements */}
-      <div className="absolute -bottom-2 left-0 right-0 h-16 bg-gradient-to-t from-dark-surface/30 to-transparent" />
+      <div className="absolute -bottom-2 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

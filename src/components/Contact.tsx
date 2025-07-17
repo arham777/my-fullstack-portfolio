@@ -1,93 +1,53 @@
-import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import AnimateOnScroll from "./AnimateOnScroll";
+import { Card, CardContent } from "@/components/ui/card";
+import { contactInfo } from "@/constants";
+import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+
+const icons = {
+  Email: <Mail className="w-6 h-6 text-primary" />,
+  Phone: <Phone className="w-6 h-6 text-primary" />,
+  Location: <MapPin className="w-6 h-6 text-primary" />,
+  "Schedule a Meeting": <Calendar className="w-6 h-6 text-primary" />,
+};
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 relative">
-      {/* Section divider at the top */}
-      <div className="absolute top-0 left-0 right-0">
-        <div className="section-divider mx-auto max-w-5xl" />
-      </div>
-      
+    <section id="contact" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <AnimateOnScroll>
-          <div className="text-center mb-8">
-            <h2 className="text-title-2 text-gradient">
-              Get in Touch
-            </h2>
-            <p className="text-body-sm mt-1.5 max-w-md mx-auto">
-              Feel free to reach out for collaborations or just a friendly hello
-            </p>
-          </div>
-        </AnimateOnScroll>
-
-        <AnimateOnScroll
-          direction="up"
-          delay={0.2}
-          type="spring"
-          className="max-w-sm mx-auto"
-        >
-          <Card className="card-surface card-hover">
-            <CardHeader className="border-b border-dark-border/20 bg-dark-muted py-3">
-              <CardTitle className="text-center text-heading">Contact Information</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 p-4 bg-gradient-to-b from-dark-surface to-dark-surface/95">
-              <AnimateOnScroll delay={0.3} direction="right" className="flex items-center gap-2.5">
-                <div className="bg-primary-600/10 p-1.5 rounded-full">
-                  <MapPin className="w-4 h-4 text-primary-400" />
+        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
+          Get in Touch
+        </h2>
+        <Card className="max-w-3xl mx-auto bg-card border border-border/20 rounded-2xl shadow-lg overflow-hidden">
+          <CardContent className="p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {contactInfo.map((info) => (
+                <div
+                  key={info.title}
+                  className="flex items-start space-x-4 p-4 rounded-lg transition-all duration-300 hover:bg-muted/50"
+                >
+                  <div className="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                    {icons[info.title as keyof typeof icons]}
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                      {info.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-2">
+                      {info.description}
+                    </p>
+                    <a
+                      href={info.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary font-medium hover:underline text-sm"
+                    >
+                      {info.linkText}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-normal">Location</p>
-                  <p className="text-caption">College road Lahore</p>
-                </div>
-              </AnimateOnScroll>
-              
-              <Separator className="bg-dark-border/15" />
-              
-              <AnimateOnScroll delay={0.4} direction="right" className="flex items-center gap-2.5">
-                <div className="bg-primary-600/10 p-1.5 rounded-full">
-                  <Phone className="w-4 h-4 text-primary-400" />
-                </div>
-                <div>
-                  <p className="text-xs font-normal">Phone</p>
-                  <a 
-                    href="tel:+923264002982" 
-                    className="text-caption hover:text-primary-400 transition-colors"
-                  >
-                    +92 326 4002982
-                  </a>
-                </div>
-              </AnimateOnScroll>
-              
-              <Separator className="bg-dark-border/15" />
-              
-              <AnimateOnScroll delay={0.5} direction="right" className="flex items-center gap-2.5">
-                <div className="bg-primary-600/10 p-1.5 rounded-full">
-                  <Mail className="w-4 h-4 text-primary-400" />
-                </div>
-                <div>
-                  <p className="text-xs font-normal">Email</p>
-                  <a 
-                    href="mailto:arhamawan200@gmail.com" 
-                    className="text-caption hover:text-primary-400 transition-colors"
-                  >
-                    arhamawan200@gmail.com
-                  </a>
-                </div>
-              </AnimateOnScroll>
-              
-              <AnimateOnScroll delay={0.6} direction="up">
-                <Button className="w-full mt-3 gap-1.5 bg-gradient-accent text-white font-normal rounded-md hover:opacity-90 transition-opacity py-2 px-4 text-sm">
-                  Schedule a meeting
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </Button>
-              </AnimateOnScroll>
-            </CardContent>
-          </Card>
-        </AnimateOnScroll>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
