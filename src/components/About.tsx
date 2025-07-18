@@ -67,6 +67,22 @@ const About: React.FC = () => {
     }
   };
 
+  // Image grayscale to color animation variant
+  const imageVariants = {
+    hidden: { 
+      filter: "grayscale(100%)",
+      transition: { duration: 0 }
+    },
+    visible: { 
+      filter: "grayscale(0%)",
+      transition: { 
+        duration: 1.2,
+        delay: 0.3,
+        ease: "easeOut" 
+      }
+    }
+  };
+
   // Divider animation
   const dividerVariants = {
     hidden: { width: "0%" },
@@ -144,10 +160,13 @@ const About: React.FC = () => {
                   scale: !isMobile ? imageScale : 1
                 }}
               >
-                <img 
+                <motion.img 
                   src={meImg} 
                   alt="Muhammad Arham Athar" 
                   className="w-full object-cover object-top" 
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
                 />
                 
                 {/* Fancy overlay effect */}
