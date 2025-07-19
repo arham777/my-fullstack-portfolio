@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "Arham Photography",
     description: "Photography portfolio showcasing creative work and photoshoots.",
-    image: "../../public/images/arham-photography.png",
+    image: "/images/arham-photography.png",
     tech: ["React", "Tailwind"],
     link: "https://arhamphotography.netlify.app"
   },
