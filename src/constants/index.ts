@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "Arham Photography",
     description: "Photography portfolio showcasing creative work and photoshoots.",
-    image: `https://api.microlink.io/?url=https://arhamphotography.netlify.app&screenshot=true&meta=false&embed=screenshot.url&overlay.browser=dark&force=true&scale=1&height=400`,
+    image: "../../public/images/arham-photography.png",
     tech: ["React", "Tailwind"],
     link: "https://arhamphotography.netlify.app"
   },
@@ -11,7 +11,7 @@ export const projects = [
     id: 2,
     title: "Capture by Arham",
     description: "Photography portfolio with presets, resources and professional services.",
-    image: `https://api.microlink.io/?url=https://capturebyarham.netlify.app&screenshot=true&meta=false&embed=screenshot.url&overlay.browser=dark&force=true&scale=1&height=400`,
+    image: "/images/capture-by-arham.png",
     tech: ["React", "Tailwind"],
     link: "https://capturebyarham.netlify.app"
   },
@@ -19,7 +19,7 @@ export const projects = [
     id: 3,
     title: "Iframe Embed",
     description: "Demonstrates dynamic iframe embedding with responsive design.",
-    image: `https://api.microlink.io/?url=https://iframe-embed-theta.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&overlay.browser=dark&force=true&scale=1&height=400`,
+    image: "/images/iframe-embed.png",
     tech: ["React", "Tailwind", "Iframe"],
     link: "https://iframe-embed-theta.vercel.app/"
   },
@@ -27,7 +27,7 @@ export const projects = [
     id: 4,
     title: "AI Chatbot",
     description: "Conversational AI chatbot built with React and Tailwind, leveraging the Gemini API for intelligent, real-time responses and a modern, user-friendly interface.",
-    image: `https://api.microlink.io/?url=https://ai-chatbot-lac-iota.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&overlay.browser=dark&force=true&scale=1&height=400`,
+    image: "/images/ai-chatbot.png",
     tech: ["React", "Tailwind", "Gemini API"],
     link: "https://ai-chatbot-lac-iota.vercel.app/"
   },
