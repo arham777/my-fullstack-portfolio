@@ -195,8 +195,9 @@ const About: React.FC = () => {
                 variants={paragraphVariants}
                 className="text-muted-foreground text-lg"
               >
-                I am a passionate Full Stack Developer with expertise in building modern web 
-                applications and digital experiences that blend form and function.
+                I am a passionate Full Stack Gen AI Developer with expertise in architecting 
+                and building intelligent SaaS solutions that blend cutting-edge AI features with 
+                modern web experiences.
               </motion.p>
               
               <div className="space-y-4">
@@ -206,24 +207,25 @@ const About: React.FC = () => {
                 >
                   With a strong foundation in both frontend and backend technologies, I create 
                   seamless user experiences using React and Next.js while building robust 
-                  server-side solutions with Python and Django.
+                  AI-driven backend services with Python, FastAPI, and LangChain.
                 </motion.p>
                 
                 <motion.p
                   custom={2}
                   variants={paragraphVariants}
                 >
-                  My approach combines clean code principles with modern design aesthetics, 
-                  ensuring that applications are not only functional but also visually appealing 
-                  and intuitive to use.
+                  My approach combines state-of-the-art LLM integrations, ReAct agent architectures, 
+                  and RAG pipelines with modern design aesthetics, ensuring that applications are 
+                  not only functional but also incredibly smart, visually appealing, and intuitive.
                 </motion.p>
                 
                 <motion.p
                   custom={3}
                   variants={paragraphVariants}
                 >
-                  Currently, I'm focused on leveraging cloud technologies and containerization to 
-                  build scalable, efficient applications that meet real-world business needs.
+                  Currently, I'm focused on pushing the boundaries of what's possible with Generative AI 
+                  by building scalable inference pipelines, document intelligence tools, and resilient 
+                  production-ready AI products.
                 </motion.p>
               </div>
               
@@ -234,7 +236,7 @@ const About: React.FC = () => {
                 className="pt-4"
               >
                 <div className="flex flex-wrap gap-2">
-                  {["React", "Next.js", "Python", "Django", "TypeScript", "AWS"].map((skill, index) => (
+                  {["React", "Next.js", "Python", "FastAPI", "TypeScript", "LangChain", "Gen AI"].map((skill, index) => (
                     <motion.span
                       key={skill}
                       className="px-3 py-1 text-xs rounded-full border border-primary/20 bg-primary/5 text-primary"

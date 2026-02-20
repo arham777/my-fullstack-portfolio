@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             <h1 className="text-title-1 text-center">
               <span className="text-gradient">Muhammad Arham Athar</span>
             </h1>
-            <h2 className="text-title-2 text-center">Full Stack Developer</h2>
+            <h2 className="text-title-2 text-center">Full Stack AI Developer</h2>
           </motion.div>
 
           <motion.p
